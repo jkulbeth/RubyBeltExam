@@ -1,0 +1,24 @@
+<h3>Register</h3>
+<% if flash[:errors] %>
+<% flash[:errors].each do |e| %>
+<p><%= e %></p>
+<% end %>
+<% end %>
+<hr>
+
+<%= form_for :user, url: "/users" do |f| %>
+    First Name: <%= f.text_field :first_name %><br>
+    Last Name: <%= f.text_field :last_name %><br>
+    Email: <%= f.text_field :email %><br>
+    Password: <%= f.password_field :password %><br>
+    <p>Password must be at least 8 characters</p>
+    Confirm (password): <%= f.password_field :password_confirmation %><br>
+    <%= f.submit "Register" %>
+<% end %>
+
+<h3>Login</h3>
+<%= form_for :user, url: "/login" do |f| %>
+    Email: <%= f.text_field :email %><br>
+    Password: <%= f.password_field :password %><br>
+    <%= f.submit "Login" %>
+<% end %>
