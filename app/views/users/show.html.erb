@@ -1,0 +1,21 @@
+<h1><%= @user.first_name%>'s....Playlist</h1>
+<a href="/songs">Dashboard</a>
+<a href="/logout">Logout</a>
+<hr>
+
+<table>
+	<thead>
+		<tr><th>|Artist...|</th>
+            <th>|Title...|</th>
+            <th>|No. of times added.....|</th>
+        </tr>
+	</thead>
+	<tbody>
+	<% @songs.each do |x| %>
+	<tr><td><%= x.artist %>.....</td>
+        <td><%= x.title %>......</td>
+        <td><%= @user.playlists.where(song:x.id).count %></td>
+    </tr>
+	<% end %>
+	</tbody>
+</table>

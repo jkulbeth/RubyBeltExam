@@ -1,4 +1,4 @@
-<h3>Register2</h3>
+<h3>Register</h3>
 <% if flash[:errors] %>
 <% flash[:errors].each do |e| %>
 <p><%= e %></p>
@@ -6,19 +6,19 @@
 <% end %>
 <hr>
 
-<%= form_for :user, url: "/users" do |f| %>
-    First Name: <%= f.text_field :first_name %><br>
-    Last Name: <%= f.text_field :last_name %><br>
-    Email: <%= f.text_field :email %><br>
-    Password: <%= f.password_field :password %><br>
+<%= form_for :user, url: "/users" do |x| %>
+    First Name: <%= x.text_field :first_name %><br>
+    Last Name: <%= x.text_field :last_name %><br>
+    Email: <%= x.text_field :email %><br>
+    Password: <%= x.password_field :password %><br>
     <p>Password must be at least 8 characters</p>
-    Confirm (password): <%= f.password_field :password_confirmation %><br>
-    <%= f.submit "Register" %>
+    Confirm (password): <%= x.password_field :password_confirmation %><br>
+    <%= x.submit "Register" %>
 <% end %>
 
 <h3>Login</h3>
-<%= form_for :user, url: "/login" do |f| %>
-    Email: <%= f.text_field :email %><br>
-    Password: <%= f.password_field :password %><br>
-    <%= f.submit "Login" %>
+<%= form_for :user, url: "/login" do |y| %>
+    Email: <%= y.text_field :email %><br>
+    Password: <%= y.password_field :password %><br>
+    <%= y.submit "Login" %>
 <% end %>
